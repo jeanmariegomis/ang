@@ -1,0 +1,78 @@
+<body>
+  <section id="container">
+
+     
+
+ 
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <a href="" class="logo"><b>Wa<span>RI</span></b></a>
+    
+      <div class="top-menu">
+        <ul class="nav pull-right top-menu">
+          <li><a class="logout"  (click)="logOut()">Logout</a></li>
+        </ul>
+      </div>
+    </header>
+  
+    <aside >
+      <div  *ngIf="!isAuthenticated()" id="sidebar" class="nav-collapse "  >
+        <ul class="sidebar-menu" id="nav-accordion" >
+          <p class="centered"><a href="profile.html"><img src="assets/img/wari.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Tr@nsfert</h5>
+         
+          <li  class="sub-menu" *ngIf="role=='ROLE_SuperAdmin'">
+            <a href="javascript:;">
+              <i class="fa fa-desktop"></i>
+              <span>Entreprises</span>
+              </a>
+            <ul class="sub">
+              <li ><a routerLink="/ajou_entr">Ajouter Entreprise</a></li>
+              <li ><a routerLink="/entreprises">Liste Entreprises</a></li>
+            </ul>
+          </li>
+          <li   class="sub-menu" *ngIf="role=='ROLE_AdminPrincipal'">
+            <a href="javascript:;">
+              <i class="fa fa-cogs"></i>
+              <span>Admin Principal</span>
+              </a>
+            <ul class="sub">
+              <li *ngIf="role=='ROLE_AdminPrincipal'"><a routerLink="/ajou_uti">Ajouter Utilisateur</a></li>
+              <li><a href="calendar.html">Bloquer Utilisateur</a></li>
+              <li *ngIf="role=='ROLE_AdminPrincipal'"><a routerLink="/list_uti">Liste des Utilisateurs</a></li>
+              <li><a href="todo_list.html">Ajouter Compte Utilisateur</a></li>  
+              <li><a href="panels.html">Ajouter Caissier</a></li>
+            
+            </ul>
+          </li>
+          <li  class="sub-menu" *ngIf="role=='ROLE_Admin'">
+            <a href="javascript:;">
+              <i class="fa fa-book"></i>
+              <span>Admin</span>
+              </a>
+            <ul class="sub">
+              <li *ngIf="role=='ROLE_Admin'"><a href="blank.html">Envoi</a></li>
+              <li *ngIf="role=='ROLE_Admin'"><a href="login.html">Retrait</a></li>            
+            </ul>
+          </li>     
+        </ul>
+      </div>
+    </aside>
+    
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-9 main-chart">
+
+
+            </div>
+        
+        </div>
+      </section>
+    </section>
+  </section>
+
+  
+</body>

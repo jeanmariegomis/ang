@@ -1,0 +1,42 @@
+  <form  #imageForm =ngForm (ngSubmit)="OnSubmit(username, Nom, Email, RaisonSociale, Ninea, Adresse, Solde, password,imageFile)" >
+  <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input type="text" ngModel class="form-control" id="exampleInputText" #username  name="username"  placeholder="Enter email">
+  </div>
+  <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" ngModel #password name="password" class="form-control" id="exampleInputText" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputNom">Nom</label>
+    <input type="text" ngModel #Nom  name="Nom" class="form-control" id="exampleInputText" placeholder="Nom">
+</div>
+<div class="form-group">
+  <label for="exampleInputEmail">Email</label>
+  <input type="Email" ngModel #Email  name="Email" class="form-control" id="exampleInputEmail" placeholder="Email">
+</div>
+<div class="form-group">
+  <label for="exampleInputRaisonSociale">RaisonSociale</label>
+  <input type="text" ngModel #RaisonSociale  name="RaisonSociale" class="form-control" id="exampleInputText" placeholder="RaisonSociale">
+</div>
+<div class="form-group">
+  <label for="exampleInputNinea">Ninea</label>
+  <input type="text" ngModel #Ninea  name="Ninea" class="form-control" id="exampleInputNinea" placeholder="Ninea">
+</div>
+<div class="form-group">
+  <label for="exampleInputAdresse">Adresse</label>
+  <input type="text" ngModel #Adresse   name="Adresse" class="form-control" id="exampleInputAdresse" placeholder="Adresse">
+</div>
+<div class="form-group">
+  <label for="exampleInputSolde">Solde</label>
+  <input type="text" ngModel #Solde   name="Solde" class="form-control" id="exampleInputAdresse" placeholder="Adresse">
+</div>
+<div class="form-group">
+  <label for="exampleInputImage">Image</label>
+</div>
+  <img [src]="imageUrl"  style="width:250px;height:200px" alt="">
+  <input type="file" #Image name="imageFile"  accept="image/*" (change)="handleFileInput($event.target.files)" class="form-control" id="exampleInputImage" placeholder="Image">
+
+  <button type="submit" class="btn btn-primary" [disabled]="Image.value=='' || !imageForm.valid" >Enregistrer</button>
+</form>
+   
